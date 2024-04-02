@@ -18,7 +18,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-    behaviors {¨
+    behaviors {
 
         hml: homerow_mod_left {
         compatible = "zmk,behavior-hold-tap";
@@ -45,9 +45,9 @@
 
         default_layer {
             bindings = <
-&kp Q          &kp W  &kp F    &kp P          &kp B           &kp J      &kp L              &kp U       &kp Y  &kp APOS
-&hml LSHIFT A  &kp R  &kp S    &kp T          &kp G           &kp M      &kp N              &kp E       &kp I  &kp O
-&kp Z          &kp X  &kp C    &kp D          &kp V           &kp K      &kp H              &none       &none  &kp UNDERSCORE
+&kp Q          &kp W        &kp F            &kp P          &kp B           &kp J      &kp L              &kp U       &kp Y  &kp APOS
+&hml LGUI A    &hml LALT R  &hml LSHIFT S    &hml LCTRL T          &kp G           &kp M      &kp N              &kp E       &kp I  &kp O
+&kp Z          &kp X        &kp C            &kp D          &kp V           &kp K      &kp H              &none       &none  &kp UNDERSCORE
                &kp TAB  &lt NAV SPACE  &lt FUN ESCAPE  &kp ENTER  &lt SYM BACKSPACE  &kp DELETE
             >;
         };
