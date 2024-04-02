@@ -15,9 +15,6 @@
 #define FUN 3
 
 / {
-    keymap {
-        compatible = "zmk,keymap";
-
     behaviors {
 
         hml: homerow_mod_left {
@@ -43,6 +40,9 @@
         };
     };
 
+    keymap {
+        compatible = "zmk,keymap";
+        
         default_layer {
             bindings = <
 &kp Q          &kp W        &kp F            &kp P          &kp B           &kp J      &kp L              &kp U       &kp Y  &kp APOS
