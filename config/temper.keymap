@@ -47,7 +47,7 @@
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            quick-tap-ms = <125>;
+            quick-tap-ms = <200>;
             tapping-term-ms = <200>;
             flavor = "balanced";
         };
@@ -85,8 +85,33 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            quick-tap-ms = <125>;
+            quick-tap-ms = <200>;
             tapping-term-ms = <200>;
+            flavor = "balanced";
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        acute_accent {
+            bindings = <&kp LC(SQT)>;
+            key-positions = <7 6>;
+        };
+
+        grave_accent {
+            bindings = <&kp LC(GRAVE)>;
+            key-positions = <7 8>;
+        };
+
+        dots_accent {
+            bindings = <&kp LC(COLON)>;
+            key-positions = <6 8>;
+        };
+
+        round_accent {
+            bindings = <&kp LC(AT)>;
+            key-positions = <6 7 8>;
         };
     };
 
