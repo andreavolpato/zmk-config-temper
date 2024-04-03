@@ -27,6 +27,7 @@
 
             hold-trigger-key-positions = <5 6 8 7 9 18 17 16 15 25 26 27 28 29 19>;
             hold-trigger-on-release;
+            retro-tap;
         };
 
         hmr: homerow_mod_right {
@@ -40,6 +41,7 @@
 
             hold-trigger-key-positions = <0 1 2 3 4 14 13 12 11 10 20 21 22 23 24>;
             hold-trigger-on-release;
+            retro-tap;
         };
 
         lht: layer_hold_tap {
@@ -143,10 +145,10 @@
 
         nav_layer {
             bindings = <
-  &trans        &trans        &caps_word      &kp PRINTSCREEN   &trans      &trans    &kp HOME   &kp END    &trans     &trans
-  &sk LEFT_GUI  &sk LEFT_ALT  &sk LEFT_SHIFT  &sk LEFT_CONTROL  &kp CLCK    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp ENTER
-  &kp LC(Z)     &kp LC(X)     &kp LC(C)       &kp LC(V)         &trans      &trans    &kp PG_DN  &kp PG_UP  &trans     &trans
-                              &trans          &trans            &trans      &trans    &trans     &trans
+  &trans     &trans     &caps_word  &kp PRINTSCREEN  &trans      &trans    &kp HOME   &kp END    &trans     &trans
+  &kp LGUI   &kp LALT   &kp LSHFT   &kp LCTRL        &kp CLCK    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp ENTER
+  &kp LC(Z)  &kp LC(X)  &kp LC(C)   &kp LC(V)        &trans      &trans    &kp PG_DN  &kp PG_UP  &trans     &trans
+                        &trans      &trans           &trans      &trans    &trans     &trans
             >;
         };
 
@@ -179,10 +181,10 @@
 
         trinum_layer {
             bindings = <
-  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans     &trans   &trans
-  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6  &kp N7  &kp N8     &kp N9   &kp N0
-  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &kp COMMA  &kp DOT  &kp UNDERSCORE
-                  &trans  &trans  &trans    &trans  &trans  &trans
+  &trans  &trans  &trans  &trans   &trans    &trans  &trans     &trans     &trans   &trans
+  &kp N1  &kp N2  &kp N3  &kp N4   &kp N5    &kp N6  &kp N7     &kp N8     &kp N9   &kp N0
+  &trans  &trans  &trans  &kp TAB  &trans    &trans  &kp ENTER  &kp COMMA  &kp DOT  &kp UNDERSCORE
+                  &trans  &trans   &trans    &trans  &trans     &trans
             >;
         };
     };
