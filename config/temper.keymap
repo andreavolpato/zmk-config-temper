@@ -98,7 +98,7 @@
 
         acute_accent {
             bindings = <&kp LC(SQT)>;
-            key-positions = <7 6>;
+            key-positions = <6 7>;
             require-prior-idle-ms = <200>;
         };
 
@@ -148,6 +148,16 @@
         combo_delete {
             bindings = <&kp DELETE>;
             key-positions = <18 19>;
+        };
+
+        combo_sk_lshift {
+            bindings = <&sk LSHFT>;
+            key-positions = <22 23>;
+        };
+
+        combo_sk_rshift {
+            bindings = <&sk RSHFT>;
+            key-positions = <26 27>;
         };
     };
 
