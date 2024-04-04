@@ -156,10 +156,10 @@
 
         default_layer {
             bindings = <
-  &kp Q        &kp W        &kp F          &kp P         &kp B         &kp J              &kp L             &kp U          &kp Y        &kp APOS
-  &hml LGUI A  &hml LALT R  &hml LSHIFT S  &hml LCTRL T  &kp G         &kp M              &hmr RCTRL N      &hmr RSHIFT E  &hmr RALT I  &hmr RGUI O
-  &kp Z        &kp X        &kp C          &kp D         &kp V         &kp K              &kp H             &coma          &dot         &underscore
-                            &lht 4 TAB     &lht 1 SPACE  &lht 2 ESC    &htg LSHIFT ENTER  &lht 3 BACKSPACE  &lht 4 DELETE
+  &kp Q        &kp W        &kp F          &kp P         &kp B             &kp J             &kp L             &kp U          &kp Y        &kp APOS
+  &hml LGUI A  &hml LALT R  &hml LSHIFT S  &hml LCTRL T  &kp G             &kp M             &hmr RCTRL N      &hmr RSHIFT E  &hmr RALT I  &hmr RGUI O
+  &kp Z        &kp X        &kp C          &kp D         &kp V             &kp K             &kp H             &coma          &dot         &underscore
+                            &lht 4 TAB     &lht 1 SPACE  &htg LSHFT ESC    &htg RCTRL ENTER  &lht 3 BACKSPACE  &lht 4 DELETE
             >;
         };
 
@@ -167,7 +167,7 @@
             bindings = <
   &kp LA(TAB)  &trans     &caps_word  &kp PRINTSCREEN  &trans      &trans    &kp HOME   &kp END    &trans     &trans
   &kp LGUI     &kp LALT   &kp LSHFT   &kp LCTRL        &kp CLCK    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp ENTER
-  &kp LC(Z)    &kp LC(X)  &kp LC(C)   &kp LC(V)        &trans      &trans    &kp PG_DN  &kp PG_UP  &trans     &trans
+  &kp LC(Z)    &kp LC(X)  &kp LC(C)   &kp LC(V)        &trans      &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans
                           &trans      &trans           &trans      &trans    &trans     &trans
             >;
         };
