@@ -132,7 +132,7 @@
 
         combo_esc {
             bindings = <&kp ESC>;
-            key-positions = <0 1>;
+            key-positions = <10 11>;
         };
 
         combo_tab {
@@ -147,7 +147,7 @@
 
         combo_delete {
             bindings = <&kp DELETE>;
-            key-positions = <8 9>;
+            key-positions = <18 19>;
         };
     };
 
