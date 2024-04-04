@@ -121,12 +121,12 @@
         };
 
         combo_tab_left {
-            bindings = <&kp LC(PAGE_DOWN)>;
+            bindings = <&kp LC(PAGE_UP)>;
             key-positions = <26 27>;
         };
 
         combo_tab_right {
-            bindings = <&kp LC(PAGE_UP)>;
+            bindings = <&kp LC(PAGE_DOWN)>;
             key-positions = <27 28>;
         };
 
