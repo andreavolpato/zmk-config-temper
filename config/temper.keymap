@@ -180,6 +180,11 @@
             bindings = <&kp PRINTSCREEN>;
             key-positions = <3 4>;
         };
+
+        combo_toggle_numpad {
+            bindings = <&tog 3>;
+            key-positions = <5 6>;
+        };
     };
 
     keymap {
@@ -187,10 +192,10 @@
 
         default_layer {
             bindings = <
-  &kp Q        &kp W        &kp F          &kp P         &kp B             &kp J             &kp L             &kp U          &kp Y        &kp APOS
-  &hml LGUI A  &hml LALT R  &hml LSHIFT S  &hml LCTRL T  &kp G             &kp M             &hmr RCTRL N      &hmr RSHIFT E  &hmr RALT I  &hmr RGUI O
-  &kp Z        &kp X        &kp C          &kp D         &kp V             &kp K             &kp H             &coma          &dot         &underscore
-                            &lht 3 TAB     &lht 1 SPACE  &htg LSHFT ESC    &htg RCTRL ENTER  &lht 2 BACKSPACE  &lht 3 DELETE
+  &kp Q        &kp W        &kp F          &kp P         &kp B            &kp J             &kp L             &kp U          &kp Y        &kp APOS
+  &hml LGUI A  &hml LALT R  &hml LSHIFT S  &hml LCTRL T  &kp G            &kp M             &hmr RCTRL N      &hmr RSHIFT E  &hmr RALT I  &hmr RGUI O
+  &kp Z        &kp X        &kp C          &kp D         &kp V            &kp K             &kp H             &coma          &dot         &underscore
+                            &lht 4 TAB     &lht 1 SPACE  &lht 3 ESCAPE    &htg RCTRL ENTER  &lht 2 BACKSPACE  &lht 4 DELETE
             >;
         };
 
@@ -212,6 +217,15 @@
             >;
         };
 
+        numpad_layer {
+            bindings = <
+  &trans  &trans  &trans  &trans  &trans    &trans  &kp N7  &kp N8  &kp N9  &kp COMMA
+  &trans  &trans  &trans  &trans  &trans    &trans  &kp N4  &kp N5  &kp N6  &kp N0
+  &trans  &trans  &trans  &trans  &trans    &trans  &kp N1  &kp N2  &kp N3  &kp DOT
+                  &trans  &trans  &tog 0    &trans  &trans  &trans
+            >;
+        };
+
         fun_layer {
             bindings = <
   &trans      &kp C_MUTE  &kp C_VOL_DN          &kp C_VOL_UP          &bt BT_SEL 2    &trans  &kp F7  &kp F8  &kp F9  &kp F12
@@ -222,12 +236,5 @@
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        cond_trinum_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
