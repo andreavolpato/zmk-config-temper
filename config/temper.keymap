@@ -96,25 +96,25 @@
     combos {
         compatible = "zmk,combos";
 
-        acute_accent {
+        combo_accent_acute {
             bindings = <&kp LC(SQT)>;
             key-positions = <6 7>;
             require-prior-idle-ms = <200>;
         };
 
-        grave_accent {
+        combo_accent_grave {
             bindings = <&kp LC(GRAVE)>;
             key-positions = <7 8>;
             require-prior-idle-ms = <200>;
         };
 
-        dots_accent {
+        combo_accent_dots {
             bindings = <&kp LC(COLON)>;
             key-positions = <6 8>;
             require-prior-idle-ms = <200>;
         };
 
-        round_accent {
+        combo_accent_round {
             bindings = <&kp LC(AT)>;
             key-positions = <6 7 8>;
             require-prior-idle-ms = <200>;
@@ -123,26 +123,28 @@
         combo_tab_left {
             bindings = <&kp LC(PAGE_UP)>;
             key-positions = <26 27>;
+            layers = <1>;
         };
 
         combo_tab_right {
             bindings = <&kp LC(PAGE_DOWN)>;
             key-positions = <27 28>;
+            layers = <1>;
         };
 
         combo_esc {
             bindings = <&kp ESC>;
-            key-positions = <10 11>;
+            key-positions = <0 1>;
         };
 
         combo_tab {
             bindings = <&kp TAB>;
-            key-positions = <11 12>;
+            key-positions = <21 22>;
         };
 
         combo_enter {
             bindings = <&kp ENTER>;
-            key-positions = <18 17>;
+            key-positions = <27 28>;
         };
 
         combo_delete {
@@ -152,12 +154,12 @@
 
         combo_sk_lshift {
             bindings = <&sk LSHFT>;
-            key-positions = <12 13>;
+            key-positions = <22 23>;
         };
 
         combo_sk_rshift {
             bindings = <&sk RSHFT>;
-            key-positions = <16 17>;
+            key-positions = <27 26>;
         };
 
         combo_caps_word {
@@ -167,7 +169,17 @@
 
         combo_backspace {
             bindings = <&kp BACKSPACE>;
-            key-positions = <18 19>;
+            key-positions = <29 28>;
+        };
+
+        combo_tab_alt {
+            bindings = <&kp LA(TAB)>;
+            key-positions = <1 2>;
+        };
+
+        combo_print_screen {
+            bindings = <&kp PRINTSCREEN>;
+            key-positions = <3 4>;
         };
     };
 
@@ -185,10 +197,10 @@
 
         nav_layer {
             bindings = <
-  &kp LA(TAB)  &trans     &caps_word  &kp PRINTSCREEN  &trans      &trans    &kp HOME   &kp END    &trans     &trans
-  &kp LGUI     &kp LALT   &kp LSHFT   &kp LCTRL        &kp CLCK    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp ENTER
-  &kp LC(Z)    &kp LC(X)  &kp LC(C)   &kp LC(V)        &trans      &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans
-                          &trans      &trans           &trans      &trans    &trans     &trans
+  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5      &kp N6    &kp N7     &kp N8     &kp N9     &kp N0
+  &kp LGUI   &kp LALT   &kp LSHFT  &kp LCTRL  &kp CLCK    &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp ENTER
+  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &trans      &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans
+                        &trans     &trans     &trans      &trans    &trans     &trans
             >;
         };
 
