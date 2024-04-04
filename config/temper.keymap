@@ -144,6 +144,11 @@
             bindings = <&kp ENTER>;
             key-positions = <18 17>;
         };
+
+        combo_delete {
+            bindings = <&kp DELETE>;
+            key-positions = <8 9>;
+        };
     };
 
     keymap {
