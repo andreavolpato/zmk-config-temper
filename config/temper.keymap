@@ -133,7 +133,7 @@
 
         combo_esc {
             bindings = <&kp ESC>;
-            key-positions = <0 1>;
+            key-positions = <1 2>;
         };
 
         combo_tab {
@@ -173,7 +173,7 @@
 
         combo_tab_alt {
             bindings = <&kp LA(TAB)>;
-            key-positions = <1 2>;
+            key-positions = <1 0>;
         };
 
         combo_print_screen {
@@ -192,10 +192,10 @@
 
         default_layer {
             bindings = <
-  &kp Q        &kp W        &kp F          &kp P         &kp B                &kp J             &kp L             &kp U          &kp Y        &kp APOS
-  &hml LGUI A  &hml LALT R  &hml LSHIFT S  &hml LCTRL T  &kp G                &kp M             &hmr RCTRL N      &hmr RSHIFT E  &hmr RALT I  &hmr RGUI O
-  &kp Z        &kp X        &kp C          &kp D         &kp V                &kp K             &kp H             &coma          &dot         &underscore
-                            &lht 4 TAB     &lht 1 SPACE  &htg LSHFT ESCAPE    &htg RCTRL ENTER  &lht 2 BACKSPACE  &lht 4 DELETE
+  &kp Q        &kp W        &kp F          &kp P         &kp B         &kp J              &kp L             &kp U          &kp Y        &kp APOS
+  &hml LGUI A  &hml LALT R  &hml LSHIFT S  &hml LCTRL T  &kp G         &kp M              &hmr RCTRL N      &hmr RSHIFT E  &hmr RALT I  &hmr RGUI O
+  &kp Z        &kp X        &kp C          &kp D         &kp V         &kp K              &kp H             &coma          &dot         &underscore
+                            &lht 4 TAB     &lht 1 SPACE  &lht 3 ESC    &htg RSHIFT ENTER  &lht 2 BACKSPACE  &lht 4 DELETE
             >;
         };
 
@@ -219,10 +219,10 @@
 
         numpad_layer {
             bindings = <
-  &trans  &trans  &trans  &trans  &trans    &trans  &kp N7  &kp N8  &kp N9  &kp COMMA
-  &trans  &trans  &trans  &trans  &trans    &trans  &kp N4  &kp N5  &kp N6  &kp N0
-  &trans  &trans  &trans  &trans  &trans    &trans  &kp N1  &kp N2  &kp N3  &kp DOT
-                  &trans  &trans  &tog 0    &trans  &trans  &trans
+  &trans  &trans  &trans  &trans  &trans    &trans   &kp N7  &kp N8  &kp N9  &kp COMMA
+  &trans  &trans  &trans  &trans  &trans    &kp TAB  &kp N4  &kp N5  &kp N6  &kp N0
+  &trans  &trans  &trans  &trans  &trans    &trans   &kp N1  &kp N2  &kp N3  &kp DOT
+                  &trans  &trans  &trans    &trans   &trans  &trans
             >;
         };
 
