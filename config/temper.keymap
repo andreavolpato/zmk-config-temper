@@ -183,7 +183,7 @@
 
         combo_toggle_numpad {
             bindings = <&tog 3>;
-            key-positions = <5 6>;
+            key-positions = <26 27 28>;
         };
     };
 
@@ -192,10 +192,10 @@
 
         default_layer {
             bindings = <
-  &kp Q        &kp W        &kp F          &kp P         &kp B         &kp J              &kp L             &kp U          &kp Y        &kp APOS
-  &hml LGUI A  &hml LALT R  &hml LSHIFT S  &hml LCTRL T  &kp G         &kp M              &hmr RCTRL N      &hmr RSHIFT E  &hmr RALT I  &hmr RGUI O
-  &kp Z        &kp X        &kp C          &kp D         &kp V         &kp K              &kp H             &coma          &dot         &underscore
-                            &lht 4 ESC     &lht 1 SPACE  &lht 3 TAB    &htg RSHIFT ENTER  &lht 2 BACKSPACE  &lht 4 DELETE
+  &kp Q        &kp W        &kp F          &kp P         &kp B           &kp J             &kp L                   &kp U          &kp Y        &kp APOS
+  &hml LGUI A  &hml LALT R  &hml LSHIFT S  &hml LCTRL T  &kp G           &kp M             &hmr RCTRL N            &hmr RSHIFT E  &hmr RALT I  &hmr RGUI O
+  &kp Z        &kp X        &kp C          &kp D         &kp V           &kp K             &kp H                   &coma          &dot         &underscore
+                            &lht 4 TAB     &lht 3 ESC    &lht 1 SPACE    &lht 2 BACKSPACE  &htg RIGHT_SHIFT ENTER  &lht 4 DELETE
             >;
         };
 
