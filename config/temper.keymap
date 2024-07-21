@@ -7,46 +7,214 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
+
+#define DEFAULT 0
+#define NAV 1
+#define SYM 2
+#define FUN 3
 
 / {
+    behaviors {
+        hml: homerow_mod_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <200>;
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <5 6 8 7 9 18 17 16 15 25 26 27 28 29 19 30 31 32 33 34 35>;
+            hold-trigger-on-release;
+            retro-tap;
+        };
+
+        hmr: homerow_mod_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <200>;
+            bindings = <&kp>, <&kp>;
+
+            hold-trigger-key-positions = <0 1 2 3 4 14 13 12 11 10 20 21 22 23 24 30 31 32 33 34 35>;
+            hold-trigger-on-release;
+            retro-tap;
+        };
+
+        lht: layer_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            quick-tap-ms = <200>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+        };
+
+        coma: coma_semicolon {
+            compatible = "zmk,behavior-mod-morph";
+            label = "COMA";
+            bindings = <&kp COMMA>, <&kp SEMICOLON>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        dot: dot_colon {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOT";
+            bindings = <&kp DOT>, <&kp COLON>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        underscore: underscore_minus {
+            compatible = "zmk,behavior-mod-morph";
+            label = "UNDERSCORE";
+            bindings = <&kp UNDERSCORE>, <&kp MINUS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        htg: hold_tap_generic {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HTG";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            quick-tap-ms = <200>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        combo_accent_acute {
+            bindings = <&kp LC(SQT)>;
+            key-positions = <6 7>;
+            require-prior-idle-ms = <200>;
+        };
+
+        combo_accent_grave {
+            bindings = <&kp LC(GRAVE)>;
+            key-positions = <7 8>;
+            require-prior-idle-ms = <200>;
+        };
+
+        combo_accent_dots {
+            bindings = <&kp LC(COLON)>;
+            key-positions = <6 8>;
+            require-prior-idle-ms = <200>;
+        };
+
+        combo_accent_round {
+            bindings = <&kp LC(AT)>;
+            key-positions = <6 7 8>;
+            require-prior-idle-ms = <200>;
+        };
+
+        combo_tab_left {
+            bindings = <&kp LC(PAGE_UP)>;
+            key-positions = <26 27>;
+            layers = <1>;
+        };
+
+        combo_tab_right {
+            bindings = <&kp LC(PAGE_DOWN)>;
+            key-positions = <27 28>;
+            layers = <1>;
+        };
+
+        combo_esc {
+            bindings = <&kp ESC>;
+            key-positions = <1 2>;
+        };
+
+        combo_tab {
+            bindings = <&kp TAB>;
+            key-positions = <11 12>;
+        };
+
+        combo_enter {
+            bindings = <&kp ENTER>;
+            key-positions = <17 18>;
+        };
+
+        combo_sk_lshift {
+            bindings = <&sk LSHFT>;
+            key-positions = <12 13>;
+        };
+
+        combo_sk_rshift {
+            bindings = <&sk RSHFT>;
+            key-positions = <16 17>;
+        };
+
+        combo_caps_word {
+            bindings = <&caps_word>;
+            key-positions = <2 3>;
+        };
+
+        combo_toggle_numpad {
+            bindings = <&tog 3>;
+            key-positions = <26 27 28>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-&kp Q  &kp W  &kp F    &kp P        &kp B         &kp J      &kp L            &kp U       &kp Y  &kp APOS
-&kp A  &kp R  &kp S    &kp T        &kp G         &kp M      &kp N            &kp E       &kp I  &kp O
-&kp Z  &kp X  &kp C    &kp D        &kp V         &kp K      &kp H            &none       &none  &kp UNDERSCORE
-              &kp TAB  &lt 1 SPACE  &lt 3 ESCAPE  &kp ENTER  &lt 2 BACKSPACE  &kp DELETE
+  &kp Q        &kp W        &kp F          &kp P         &kp B           &kp J             &kp L                   &kp U          &kp Y        &kp APOS
+  &hml LGUI A  &hml LALT R  &hml LSHIFT S  &hml LCTRL T  &kp G           &kp M             &hmr RCTRL N            &hmr RSHIFT E  &hmr RALT I  &hmr RGUI O
+  &kp Z        &kp X        &kp C          &kp D         &kp V           &kp K             &kp H                   &coma          &dot         &underscore
+                            &lht 4 TAB     &lht 3 ESC    &lht 1 SPACE    &lht 2 BACKSPACE  &htg RIGHT_SHIFT ENTER  &lht 4 DELETE
             >;
         };
 
         nav_layer {
             bindings = <
-&kp N1        &kp N2        &kp N3          &kp N4            &kp N5        &kp N6    &kp N7     &kp N8     &kp N9     &kp N0
-&sk LEFT_GUI  &sk LEFT_ALT  &sk LEFT_SHIFT  &sk LEFT_CONTROL  &kp CAPSLOCK  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp ENTER
-&kp LC(Z)     &kp LC(X)     &kp LC(C)       &kp LC(V)         &trans        &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans
-                            &trans          &trans            &trans        &trans    &trans     &trans
+  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5          &kp N6    &kp N7     &kp N8     &kp N9     &kp N0
+  &kp LGUI   &kp LALT   &kp LSHFT  &kp LCTRL  &caps_word      &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp ENTER
+  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp CAPSLOCK    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &kp BACKSPACE
+                        &trans     &trans     &trans          &trans    &trans     &trans
             >;
         };
 
         sym_layer {
             bindings = <
-&kp EXCL   &kp LT     &kp GT        &kp DLLR   &kp PRCNT  &kp AMPS   &kp SINGLE_QUOTE   &kp LBKT  &kp RBKT  &kp QMARK
-&kp HASH   &kp MINUS  &kp PLUS      &kp EQUAL  &kp GRAVE  &kp PIPE   &kp COLON          &kp LPAR  &kp RPAR  &kp SEMI
-&kp CARET  &kp SLASH  &kp ASTERISK  &kp BSLH   &trans     &kp TILDE  &kp DOUBLE_QUOTES  &kp LBRC  &kp RBRC  &kp AT
-                      &trans        &trans     &trans     &trans     &trans             &trans
+  &kp EXCL       &kp AT     &kp HASH      &kp DLLR   &kp PRCNT           &kp AMPS   &kp DOUBLE_QUOTES  &kp LBKT  &kp RBKT  &kp QMARK
+  &kp LESS_THAN  &kp MINUS  &kp PLUS      &kp EQUAL  &kp GREATER_THAN    &kp PIPE   &kp COLON          &kp LPAR  &kp RPAR  &kp BACKSLASH
+  &trans         &kp SLASH  &kp ASTERISK  &kp CARET  &trans              &kp TILDE  &kp SINGLE_QUOTE   &kp LBRC  &kp RBRC  &kp GRAVE
+                            &trans        &trans     &trans              &trans     &trans             &trans
+            >;
+        };
+
+        numpad_layer {
+            bindings = <
+  &trans  &trans  &trans  &trans  &trans    &trans   &kp N7  &kp N8  &kp N9  &kp COMMA
+  &trans  &trans  &trans  &trans  &trans    &kp TAB  &kp N4  &kp N5  &kp N6  &kp N0
+  &trans  &trans  &trans  &trans  &trans    &trans   &kp N1  &kp N2  &kp N3  &kp DOT
+                  &trans  &trans  &trans    &trans   &trans  &trans
             >;
         };
 
         fun_layer {
             bindings = <
-&trans        &kp K_MUTE    &kp C_VOL_DN  &kp C_VOL_UP  &out OUT_TOG  &trans  &kp F1  &kp F2   &kp F3   &kp F4
-&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans  &kp F5  &kp F6   &kp F7   &kp F8
-&bt BT_CLR    &kp C_PREV    &kp C_PP      &kp C_NEXT    &trans        &trans  &kp F9  &kp F10  &kp F11  &kp F12
-                            &trans        &trans        &trans        &trans  &trans  &trans
+  &trans      &kp C_MUTE  &kp C_VOL_DN          &kp C_VOL_UP          &bt BT_SEL 2    &kp PSCRN  &kp F7  &kp F8  &kp F9  &kp F12
+  &trans      &trans      &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &bt BT_SEL 1    &trans     &kp F4  &kp F5  &kp F6  &kp F11
+  &bt BT_CLR  &kp C_PP    &kp C_PREV            &kp C_NEXT            &bt BT_SEL 0    &trans     &kp F1  &kp F2  &kp F3  &kp F10
+                          &trans                &trans                &trans          &trans     &trans  &trans
             >;
         };
     };
+
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
