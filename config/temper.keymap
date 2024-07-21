@@ -167,6 +167,15 @@
         };
     };
 
+    macros {
+        previous_folder: previous_folder {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp DOT &kp BSLH>;
+            label = "PREVIOUS_FOLDER";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -191,8 +200,8 @@
         sym_layer {
             bindings = <
   &kp EXCL       &kp AT     &kp HASH      &kp DLLR   &kp PRCNT           &kp AMPS   &kp DOUBLE_QUOTES  &kp LBKT  &kp RBKT  &kp QMARK
-  &kp LESS_THAN  &kp MINUS  &kp PLUS      &kp EQUAL  &kp GREATER_THAN    &kp PIPE   &kp COLON          &kp LPAR  &kp RPAR  &kp BACKSLASH
-  &trans         &kp SLASH  &kp ASTERISK  &kp CARET  &trans              &kp TILDE  &kp SINGLE_QUOTE   &kp LBRC  &kp RBRC  &kp GRAVE
+  &kp LESS_THAN  &kp MINUS  &kp PLUS      &kp EQUAL  &kp GREATER_THAN    &kp PIPE   &kp COLON          &kp LPAR  &kp RPAR  &kp SEMICOLON
+  &kp CARET      &kp SLASH  &kp ASTERISK  &kp BSLH   &previous_folder    &kp TILDE  &kp SINGLE_QUOTE   &kp LBRC  &kp RBRC  &kp GRAVE
                             &trans        &trans     &trans              &trans     &trans             &trans
             >;
         };
