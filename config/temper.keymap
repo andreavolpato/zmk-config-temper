@@ -176,7 +176,7 @@
             bindings = <
   &kp Q        &kp W        &kp F          &kp P         &kp B         &kp J             &kp L             &kp U          &kp Y        &kp APOS
   &hml LGUI A  &hml LALT R  &hml LSHIFT S  &hml LCTRL T  &kp G         &kp M             &hmr RCTRL N      &hmr RSHIFT E  &hmr RALT I  &hmr RGUI O
-  &kp Z        &kp X        &kp C          &kp D         &kp V         &kp K             &kp H             &coma          &dot         &kp UNDERSCORE
+  &kp Z        &kp X        &kp C          &kp D         &kp V         &kp K             &kp H             &kp COMMA      &kp PERIOD   &kp UNDERSCORE
                             &lht 4 ESCAPE  &lht 1 SPACE  &lht 3 TAB    &htg LSHFT ENTER  &lht 2 BACKSPACE  &lht 4 DELETE
             >;
         };
