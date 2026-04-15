@@ -5,32 +5,32 @@
 # pass flags to the build command and `artifact-name` to assign a name to
 # distinguish build outputs from each other:
 #
-# board: [ "nice_nano" ]
+# board: [ "nice_nano//zmk" ]
 # shield: [ "corne_left", "corne_right" ]
 # include:
 #   - board: bdn9_rev2
-#   - board: nice_nano
+#   - board: nice_nano//zmk
 #     shield: reviung41
-#   - board: nice_nano
+#   - board: nice_nano//zmk
 #     shield: corne_left
 #     cmake-args: -DCONFIG_ZMK_USB_LOGGING=y
 #     artifact-name: corne_left_with_logging
 #
 ---
 include:
-  # - board: nice_nano
+  # - board: nice_nano//zmk
   #   shield: corne_left
-  # - board: nice_nano
+  # - board: nice_nano//zmk
   #   shield: corne_right
   # Studio RPC should only be enabled on the central half.
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: temper_left
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: temper_right
   # Keep a reset image around to clear stored BLE bonds/settings when split pairing goes bad.
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: settings_reset
     artifact-name: settings_reset-nice_nano
 
