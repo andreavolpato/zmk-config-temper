@@ -18,6 +18,7 @@
         display-name = "Default Layout";
         transform = <&default_transform>;
         kscan = <&kscan0>;
+        // Studio expects this array to stay in the same order as the matrix transform and keymap bindings.
         keys
             = <&key_physical_attrs 100 100   0 100    0   0   0>
             , <&key_physical_attrs 100 100 100  33    0   0   0>
