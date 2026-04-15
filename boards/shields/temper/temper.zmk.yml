@@ -8,6 +8,7 @@ exposes: [i2c_oled]
 features:
   - keys
   - display
+  - studio
   - underglow
 siblings:
   - temper_left
