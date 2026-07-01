@@ -123,18 +123,6 @@
             require-prior-idle-ms = <200>;
         };
 
-        combo_tab_left {
-            bindings = <&kp LC(PAGE_UP)>;
-            key-positions = <26 27>;
-            layers = <NAV>;
-        };
-
-        combo_tab_right {
-            bindings = <&kp LC(PAGE_DOWN)>;
-            key-positions = <27 28>;
-            layers = <NAV>;
-        };
-
         combo_esc {
             bindings = <&kp ESC>;
             key-positions = <1 2>;
@@ -142,12 +130,12 @@
 
         combo_tab {
             bindings = <&kp TAB>;
-            key-positions = <11 12>;
+            key-positions = <21 22>;
         };
 
         combo_enter {
             bindings = <&kp ENTER>;
-            key-positions = <17 18>;
+            key-positions = <27 28>;
         };
 
         combo_sk_lshift {
@@ -158,11 +146,6 @@
         combo_sk_rshift {
             bindings = <&sk RSHFT>;
             key-positions = <16 17>;
-        };
-
-        combo_toggle_numpad {
-            bindings = <&tog NUM>;
-            key-positions = <26 27 28>;
         };
     };
 
@@ -180,18 +163,18 @@
 
         default_layer {
             bindings = <
-  &kp Q        &kp W        &kp F            &kp P         &kp B             &kp J               &kp L          &lht 5 U        &kp Y        &kp APOS
-  &hml LGUI A  &hml LALT R  &hml LSHIFT S    &hml LCTRL T  &kp G             &kp M               &hmr RCTRL N   &hmr RSHIFT E   &hmr RALT I  &hmr RGUI O
-  &kp Z        &kp X        &kp C            &kp D         &kp V             &kp K               &kp H          &lht 5 COMMA    &kp PERIOD   &kp UNDERSCORE
-                            &lht FUN ESCAPE  &lht NUM TAB  &lht NAV SPACE    &lht SYM BACKSPACE  &lht 4 DELETE  &lht FUN ENTER
+  &kp Q            &kp W            &kp F            &kp P         &kp B             &kp J               &kp L          &lht 5 U          &kp Y                  &kp APOS
+  &sk A            &sk R            &sk S            &sk T         &kp G             &kp M               &sk N          &sk E             &sk I                  &sk O
+  &hml LEFT_WIN Z  &hml LEFT_ALT X  &hml LSHIFT C    &hml LCTRL D  &kp V             &kp K               &hmr RCTRL H   &hmr RSHFT COMMA  &hmr RIGHT_ALT PERIOD  &hmr RWIN UNDERSCORE
+                                    &lht FUN ESCAPE  &lht NUM TAB  &lht NAV SPACE    &lht SYM BACKSPACE  &lht 4 DELETE  &lht FUN ENTER
             >;
         };
 
         nav_layer {
             bindings = <
   &kp N1     &kp N2     &kp N3     &kp N4     &kp N5          &kp N6    &kp N7     &kp N8     &kp N9     &kp N0
-  &kp LGUI   &kp LALT   &kp LSHFT  &kp LCTRL  &caps_word      &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp PERIOD
-  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp CAPSLOCK    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans
+  &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &caps_word      &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &kp PERIOD
+  &kp LWIN   &kp LALT   &kp LSHFT  &kp LCTRL  &kp CAPSLOCK    &kp HOME  &kp PG_DN  &kp PG_UP  &kp END    &trans
                         &trans     &trans     &trans          &trans    &trans     &trans
             >;
         };
